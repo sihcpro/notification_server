@@ -10,7 +10,7 @@ listen = ["default"]
 
 if __name__ == "__main__":
     redis_host = os.environ.get("REDIS_HOST", "localhost")
-    redis_port = os.environ.get("REDIS_PORT", 10379)
+    redis_port = int(os.environ.get("REDIS_PORT", 10379))
 
     # redis_queue = Queue(connection=Redis(host=redis_host, port=redis_port))
     # while True:
