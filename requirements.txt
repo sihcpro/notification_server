@@ -1,0 +1,5 @@
+libxml2-python3
+redis
+rq
+secure-smtplib
+email-to

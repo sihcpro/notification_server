@@ -1,0 +1,11 @@
+pytest
+pytest-html
+tox
+tox-current-env
+pep8-naming
+flake8-print
+flake8
+black
+isort
+mypy
+bandit
