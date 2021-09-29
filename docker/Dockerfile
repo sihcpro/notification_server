@@ -1,17 +1,15 @@
-FROM alpine:latest
+FROM python:3.8.12-alpine3.14
 
 ARG TARGET_ENV=develop
-RUN apk add --no-cache python3 py3-pip build-base python3-dev libxslt-dev libxml2-dev
+RUN apk add --update --no-cache g++ gcc libxml2-dev libxslt-dev libffi-dev
 RUN pip3 install -U pip
-RUN mkdir -p /app/src
 
-ENV PYTHONPATH /app/src/
-
+RUN mkdir -p /app
 ADD requirements.txt /app/
 RUN pip3 install -r /app/requirements.txt
 
-ADD docker/x-run /app/
-ADD ./env/$TARGET_ENV/secret.py /app/notification_server/secret.py
-ADD ./.build/ /app/
+ADD ./src /app/src
+ENV PYTHONPATH /app/src
 
-CMD ["sh", "/app/x-run"]
+WORKDIR /app
+CMD ["python3", "-m", "src"]

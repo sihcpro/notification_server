@@ -3,3 +3,6 @@ redis
 rq
 secure-smtplib
 email-to
+ndg-httpsclient
+pyopenssl
+pyasn1
