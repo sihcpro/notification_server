@@ -1,5 +1,3 @@
-from pyrsistent import s
-
 FALSE_STRING = {"n", "no", "none", "null", "", "false", "f", None, False}
 
 
