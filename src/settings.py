@@ -9,4 +9,6 @@ SMTP_PORT = os.environ.get("NS_SMTP_PORT", 587)  # 587: TSL | 465: SSL
 SMTP_USER = os.environ.get("NS_SMTP_USER")
 SMTP_PASS = os.environ.get("NS_SMTP_PASS")
 
-SMTP_USER_NAME = os.environ.get("NS_SMTP_USER_NAME")
+SMTP_USER_NAME = os.environ.get("NS_SMTP_USER_NAME", SMTP_USER)
+
+SMTP_REQUIRED_LOGIN = os.environ.get("NS_SMTP_REQUIRED_LOGIN", True)
